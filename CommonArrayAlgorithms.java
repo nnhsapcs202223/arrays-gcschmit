@@ -11,17 +11,17 @@ public class CommonArrayAlgorithms
         {
             randomArray[ i ] = (int)( Math.random() * maxValue );
         }
-        
+
         return randomArray;
     }
-    
+
     /*
      * Prints the specified array to System.out
      */
     public static void printArray( int[] array )
     {
         System.out.print("[");
-        
+
         for(int i = 0; i < array.length; i++)
         {
             System.out.print(array[i]);
@@ -30,10 +30,10 @@ public class CommonArrayAlgorithms
                 System.out.print(", ");
             }
         }
-        
+
         System.out.println("]");
     }
-    
+
     /*
      * Array Algorithm #0: Sum and Average
      *  creates an array filled with random numbers
@@ -54,7 +54,7 @@ public class CommonArrayAlgorithms
         }
 
         average = sum / array.length;
-        
+
         printArray( array );
         System.out.println( "sum: " + sum + " average: " + average );
 
@@ -69,6 +69,18 @@ public class CommonArrayAlgorithms
      */
     public static void printElementSeparators()
     {
+        int[] randomArray = createRandomArray( 10, 50 );
+
+        for(int x = 0;x<randomArray.length;x++){
+            if(x>0){
+                System.out.print("|"+randomArray[x]);
+            }
+            else{
+                System.out.print(randomArray[x]);
+            }
+
+        }
+
     }
 
     /*
@@ -80,7 +92,22 @@ public class CommonArrayAlgorithms
      */
     public static int linearSearch( int valueToFind )
     {
-        return 0;
+        int[] array = createRandomArray( 50, 50 );
+        boolean has_number =  false;
+        int index = -1;
+        int counter = 0;
+        for(int i : array){
+            if(i == valueToFind && !has_number){
+                index = counter;
+                has_number = true;
+            }
+            counter++;
+        }
+        for(int i : array){
+            System.out.println(i);
+        }
+        System.out.println(index);
+        return index;
     }
 
     /*
@@ -92,7 +119,23 @@ public class CommonArrayAlgorithms
      */
     public static int countLessThan( int limit )
     {
-        return 0;
+        int[] array = createRandomArray( 10, 50);
+
+        int count = 0;
+
+        for(int i : array)
+        {
+            if(i < limit)
+            {
+                count += 1;
+            }
+        }
+
+        System.out.print("array: ");
+        printArray(array);
+
+        System.out.print("\ncount: " + count);
+        return count;
     }
 
     /*
@@ -101,9 +144,20 @@ public class CommonArrayAlgorithms
      *  prints the array and the greatest number
      * @return returns the greatest number in the array
      */
-    public static int findMax() 
+    public static int findMax()
     {
-        return 0;
+        int[] array = createRandomArray(10, 50);
+        int greatest = 0;
+        for(int i = 0; i<array.length; i++)
+        {
+            if (array[i]> greatest)
+            {
+                greatest = array[i];
+            }
+        }
+        printArray(array);
+        System.out.println(greatest);
+        return greatest;
     }
 
     /*
@@ -114,11 +168,21 @@ public class CommonArrayAlgorithms
      *  prints the original array and the new array
      *  returns the new array
      */
-    public static int[] reverseArray()
+    public static int[] reverseArray(int size)
     {
-        return null;
+        int[] array = createRandomArray(size, 50);
+        int[] newArray = new int[size];
+        int index = 0;
+        for (int i = size - 1; i >= 0; i--)
+        {
+            newArray[index] = array[i];
+            index++;
+        }
+        printArray(array);
+        printArray(newArray);
+        return newArray;
     }
-    
+
     /*
      * Array Algorithm #6: Mode
      *  creates an array filled with random numbers
@@ -129,12 +193,44 @@ public class CommonArrayAlgorithms
     public static int mode()
     {
         /* hint: when creating the random array, specify parameters that will
-         *        likely result in a value being repeated multiple times;
-         *        create another array to keep track of how many times each value
-         *        occurs (index is the number and the value is the number of occurrences)
+         *    likely result in a value being repeated multiple times;
+         *    create another array to keep track of how many times each value
+         *    occurs (index is the number and the value is the number of occurrences)
          */
-         
-         return 0;
+
+        int[] array = createRandomArray (20,5);
+        int[] array2 = new int[5];
+        int num = 0;
+
+        int mode = 0;
+
+        for (int element : array)
+        {
+            array2[element] += 1;
+        }
+
+        for (int i=0; i< array2.length; i++)
+        {
+            int newMode = array2[i];
+            if (mode < newMode)
+            {
+                mode = newMode;
+            }
+        }
+
+        for (int a = 0; a< array2.length; a++)
+        {
+            if (array2[a] == mode)
+            {
+                num = a;
+            }
+        }
+
+        printArray(array);
+        printArray(array2);
+        System.out.println(num);
+
+        return num;
     }
 
 }
