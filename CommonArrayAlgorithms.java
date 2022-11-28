@@ -220,8 +220,9 @@ public class CommonArrayAlgorithms
 
         }
         System.out.println("-");
+        printArray(countArr);
         System.out.println(mode);
-        System.out.println(countArr[maxAmt]);
+        System.out.println(maxAmt);
 
         return 0;
     }
