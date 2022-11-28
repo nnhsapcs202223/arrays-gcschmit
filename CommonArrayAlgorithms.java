@@ -215,14 +215,7 @@ public class CommonArrayAlgorithms
             if (mode < newMode)
             {
                 mode = newMode;
-            }
-        }
-
-        for (int a = 0; a< array2.length; a++)
-        {
-            if (array2[a] == mode)
-            {
-                num = a;
+                num = i;
             }
         }
 
