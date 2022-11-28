@@ -194,6 +194,7 @@ public class CommonArrayAlgorithms
             countingArray[array[i]]++;
         }
         System.out.println();
+        printArray(countingArray);
         System.out.print("result: ");
         int highestInt=0;
         int highestCount=0;
