@@ -57,7 +57,7 @@ public class BigTenData
     /**
      * Returns a 2D array of distances (in miles) between cities in the Big Ten Conference.
      *  The rows and columns in this 2D array correspond to the cities returned by the
-     *      getBigTen method.
+     *      getCities method.
      *      
      *  For example, to get the distance between Michigan (index 3) and Ohio State (index 5),
      *      find the value in the 2D array at row 3 and column 5, which is 189 miles.

@@ -41,6 +41,10 @@ public class Tour implements Comparable
      *      
      *  Other methods will populate the cityIndices array such that it contains a valid tour
      *            and then update the distance.
+     *            
+     *  Tip: don't be confused by the protected visibility of this constructor;
+     *      this it is protected and not private because the test code needs to invoke it
+
      */
     protected Tour()
     {

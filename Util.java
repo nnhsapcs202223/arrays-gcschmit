@@ -6,7 +6,7 @@
  */
 public class Util 
 {
-    /*
+    /**
      * Returns a random integer between m (inclusive) and n (exclusive) [m, n)
      * 
      * @param m     low-end of range
