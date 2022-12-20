@@ -187,16 +187,18 @@ public class TourTest
 
         Tour tour = new Tour();
         tour.populateWithCities();
-        double prevDistance = tour.getDistance();
-
+        
         for(int i = 0; i < 1000; i++)
         {
+            Tour prevTour = new Tour(tour);
             tour.mutate();
-            if(tour.getDistance() != prevDistance)
+            if(! Arrays.equals(prevTour.getCityIndices(), tour.getCityIndices()))
             {
                 mutateCount++;
+                double prevDistance = tour.getDistance();
+                tour.updateDistance();
+                assertEquals(prevDistance, tour.getDistance(), 0.01);
             }
-            prevDistance = tour.getDistance();
         }
 
         assertEquals(TravelingStudent.mutationProbability, mutateCount/1000.0, 0.05);
