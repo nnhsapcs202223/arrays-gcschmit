@@ -10,7 +10,7 @@ import java.lang.Comparable;
 public class Tour implements Comparable
 {
     /*
-     * The cityIndicies instance variable is an array of indicies of elements in the array
+     * The cityIndices instance variable is an array of indices of elements in the array
      *      of references to City objects provided by the BigTenData.getCities method. The order
      *      of element is the order in which the corresponding cities are visited. It is
      *      implied that we return to the first city at the end of the tour to "complete" it.
@@ -31,7 +31,7 @@ public class Tour implements Comparable
     private double distance;
 
     /**
-     * Creates a new "empty" Tour object.
+     * Initialize this new Tour object.
      *  
      *  postcondition: The cityIndices array has a length equal to the number of cities in
      *      the BigTenData class's cities array. 
@@ -52,7 +52,7 @@ public class Tour implements Comparable
     }
 
     /**
-     * Constructs a new Tour object by copying the specified tour.
+     * Initialize this new Tour object by copying the specified tour's values.
      *      
      *  postcondition: The reference to the cityIndices array is NOT copied. This constructor
      *      initializes the cityIndices array to a new array of the appropriate length
@@ -102,6 +102,7 @@ public class Tour implements Comparable
      *      determined order other than that the first city visited (i.e., home) is always
      *      the city corresponding to index 0.
      *      
+     *  tip: all elements in the citiesIndices array initially are zero.
      *  tip: The swapRandTwo method can be used repeatedly to randomize order of elements.
      *  
      *  postcondition: The distance of the new tour reflects the order of its cities.
@@ -141,7 +142,7 @@ public class Tour implements Comparable
      *                    x1          x2
      *      
      *      
-     *       child ------+++++++++++++--------------
+     *       child -------++++++++++++--------------
      *      </pre>
      *      
      *      At a high level the array copying takes place in three stages:
