@@ -231,6 +231,7 @@ public class TourTest
             assertEquals(0, cityIndices[0], "the first element must always be 0");
             assertArrayEquals(cityIndices, parentA.getCityIndices(),
                     "child expected to match parentA");
+            assertNotEquals(0, child.getDistance(), "the child's distance must not be zero");
 
         }
 
